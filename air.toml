@@ -1,0 +1,9 @@
+root = "." # root directory of the project
+tmp_dir = "tmp" # temporary directory for storing intermediate files
+
+[build] # build configuration
+    bin = "main" # directory for storing the compiled binary
+    cmd = "go build -o {{.Output}} {{.Input}}" # command for building the binary
+    exclude = ["tmp/*", "client/*"] # exclude files from the build process
+    include = ["**/*.go"] # include files in the build process
+    ignore = ["tmp/*"] # ignore files from the watch process
